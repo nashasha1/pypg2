@@ -36,7 +36,7 @@ if __name__ == '__main__':
     if port is None:
         port = '5432'
 
-    host = "jdbc:postgresql://" + host
+#    host = "jdbc:postgresql://" + host
     
     print "connect:%s:%s user:%s,db:%s" % (host, port,user,database)
 
