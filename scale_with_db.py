@@ -15,6 +15,7 @@ def dead_loop(cur):
             cur.execute("SELECT flag FROM auto_test;")
             row =cur.fetchone()
             flag = row[0]
+            print "flag is: ", flag
             if flag:
                 break
             time.sleep(0.01)
