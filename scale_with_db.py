@@ -16,9 +16,9 @@ def dead_loop(cur):
             row =cur.fetchone()
             flag = row[0]
             print "flag is: ", flag
-            if flag:
+            if not flag:
                 break
-            cur.close()
+#             cur.close()
             time.sleep(0.01)
             a=time.time()
         count += 1
