@@ -18,6 +18,7 @@ def dead_loop(cur):
             print "flag is: ", flag
             if flag:
                 break
+            cur.close()
             time.sleep(0.01)
             a=time.time()
         count += 1
@@ -34,6 +35,8 @@ if __name__ == '__main__':
         host = '127.0.0.1'
     if port is None:
         port = '5432'
+    
+    print "connect:%s:%s user:%s,db:%s" % (host, port,user,database)
 
     try:
         conn = psycopg2.connect(database=database,
