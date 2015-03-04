@@ -6,9 +6,10 @@ def dead_loop(cur):
     a = time.time()
     print a
     count = 0
+    circletime = 10
     while True:
         b=time.time()
-        if b - a > 10:
+        if b - a > circletime:
             print 'sleep 1s'
             print a,'---',count
             count = 0
@@ -17,11 +18,16 @@ def dead_loop(cur):
             flag = row[0]
             print "flag is: ", flag
             if not flag:
-                break
+                circletime = 1
+                a=time.time()
+                time.sleep(1)
+                count += 1
+                continue
 #             cur.close()
             time.sleep(0.01)
             a=time.time()
         count += 1
+    
 
 if __name__ == '__main__':
     database = os.getenv("POSTGRES_USER")
@@ -35,8 +41,6 @@ if __name__ == '__main__':
         host = '127.0.0.1'
     if port is None:
         port = '5432'
-
-#    host = "jdbc:postgresql://" + host
     
     print "connect:%s:%s user:%s,db:%s" % (host, port,user,database)
 

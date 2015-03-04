@@ -1,6 +1,7 @@
 import psycopg2
 import time
-conn = psycopg2.connect(database="mathilde", user="mathilde", password="123456", host="52.10.189.238", port="1234")
+#conn = psycopg2.connect(database="mathilde", user="mathilde", password="123456", host="52.10.189.238", port="1234")
+conn = psycopg2.connect(database="mathilde", user="mathilde", password="123456", host="xdzhang_auto_scaling_server-xdzhang.alauda.me", port="10115")
 print "connect success"
 cur = conn.cursor()
 # cur.execute("CREATE TABLE test(id serial PRIMARY KEY, num integer,data varchar);")
